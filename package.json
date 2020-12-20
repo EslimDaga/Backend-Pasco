@@ -1,7 +1,7 @@
 {
   "name": "backend-pasco",
   "version": "1.0.0",
-  "description": "",
+  "description": "This application contains the backent part.",
   "main": "index.js",
   "scripts": {
     "dev" : "nodemon src/index.js --exec babel-node",
@@ -9,7 +9,7 @@
     "start" : "node build/index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Eslim Daga",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
