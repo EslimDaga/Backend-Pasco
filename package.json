@@ -4,9 +4,9 @@
   "description": "This application contains the backent part.",
   "main": "index.js",
   "scripts": {
-    "dev" : "nodemon src/index.js --exec babel-node",
-    "build" : "babel src --out-dir build",
-    "start" : "node build/index.js"
+    "dev": "nodemon src/index.js --exec babel-node",
+    "build": "babel src --out-dir build",
+    "start": "node build/index.js"
   },
   "keywords": [],
   "author": "Eslim Daga",
