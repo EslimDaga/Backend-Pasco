@@ -1,6 +1,6 @@
 import moongose from "mongoose";
 
-moongose.connect("mongodb+srv://eslim:daga2020@cluster0.65kp7.mongodb.net/<dbname>?retryWrites=true&w=majority",{
+moongose.connect("mongodb+srv://eslim:<Password>@cluster0.65kp7.mongodb.net/<dbname>?retryWrites=true&w=majority",{
     useNewUrlParser : true,
     useUnifiedTopology : true,
     useFindAndModify : true,
