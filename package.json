@@ -1,11 +1,11 @@
 {
-  "name": "backendpasco",
+  "name": "backend-pasco",
   "version": "1.0.0",
-  "description": "",
+  "description": "API Pasco",
   "main": "index.js",
   "scripts": {
     "build" : "babel src --out-dir build",
-    "dev": "babel-node src/index.js",
+    "dev": "nodemon src/index.js --exec babel-node",
     "start": "node build/index.js"
   },
   "repository": {
@@ -13,7 +13,7 @@
     "url": "git+https://github.com/EslimDaga/Backend-Pasco.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Eslim Daga",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/EslimDaga/Backend-Pasco/issues"
