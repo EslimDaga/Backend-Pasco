@@ -11,7 +11,9 @@ app.set("pkg", pkg);
 
 //Middleware
 app.use(morgan("dev"));
-app.use(disctrictRoutes);
+
+//Routes
+app.use("/api/district",disctrictRoutes);
 
 app.get("/", (req,res) => {
   res.json({
