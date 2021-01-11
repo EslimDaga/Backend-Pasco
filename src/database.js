@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-mongoose.connect("mongodb+srv://edaga:daga2020@cluster0.qxixk.mongodb.net/<dbname>?retryWrites=true&w=majority", {
+mongoose.connect("mongodb+srv://edaga:daga2020@cluster0.qxixk.mongodb.net/pascodatabase?retryWrites=true&w=majority", {
   useNewUrlParser : true,
   useUnifiedTopology : true,
   useCreateIndex : true
