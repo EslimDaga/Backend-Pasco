@@ -1,6 +1,6 @@
 import { Schema, model } from "mongoose";
 
-new Schema({
+const districtSchema = new Schema({
   name : String,
   region : String,
   province : String,
