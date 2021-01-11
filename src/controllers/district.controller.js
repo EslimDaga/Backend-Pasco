@@ -1,9 +1,11 @@
+import District from "../models/District";
+
 export const getDistrict = (req,res) => {
-  res.json("Get district")
+
 }
 
 export const getDistrictById = (req,res) => {
-
+  res.json("Creating Product")
 }
 
 export const createDistrict = (req,res) => {
