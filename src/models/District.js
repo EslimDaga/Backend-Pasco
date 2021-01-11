@@ -7,7 +7,7 @@ new Schema({
   latitude : Number,
   longitude : Number,
   altitude : Number,
-  imgUrl : String
+  imageUrl : String
 },{
   timestamps : true,
   versionKey : false
