@@ -1,11 +1,12 @@
 {
-  "name": "Backend-Pasco",
+  "name": "backendPasco",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/index.js"
+    "build" : "babel src --out-dir build",
+    "dev": "babel-node src/index.js",
+    "start": "node build/index.js"
   },
   "repository": {
     "type": "git",
