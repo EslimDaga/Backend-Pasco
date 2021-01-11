@@ -1,7 +1,8 @@
 import District from "../models/District";
 
-export const getDistrict = (req,res) => {
-  res.json("Get all District");
+export const getDistrict = async(req,res) => {
+  const districts = await District.find();
+  res.json(districts);
 }
 
 export const getDistrictById = (req,res) => {
