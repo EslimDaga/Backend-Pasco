@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = void 0;
+exports.default = void 0;
 
 var _mongoose = require("mongoose");
 
@@ -22,4 +22,4 @@ var districtSchema = new _mongoose.Schema({
 
 var _default = (0, _mongoose.model)("District", districtSchema);
 
-exports["default"] = _default;
+exports.default = _default;
