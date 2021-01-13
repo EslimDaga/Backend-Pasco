@@ -1,7 +1,9 @@
 import express from "express";
 import morgan from "morgan";
 import pkg from "../package.json";
+
 import disctrictRoutes from "./routes/district.routes";
+import authRoutes from "./routes/auth.routes";
 
 const app = express();
 
@@ -15,6 +17,7 @@ app.use(express.json());
 
 //Routes
 app.use("/api/district",disctrictRoutes);
+app.use("/api/auth",authRoutes);
 
 app.get("/", (req,res) => {
   res.json({
