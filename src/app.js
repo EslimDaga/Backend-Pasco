@@ -6,6 +6,7 @@ import { createRoles } from "./libs/initialSetup";
 
 import disctrictRoutes from "./routes/district.routes";
 import authRoutes from "./routes/auth.routes";
+import userRoutes from "./routes/user.routes";
 
 const app = express();
 createRoles();
@@ -21,6 +22,7 @@ app.use(express.json());
 //Routes
 app.use("/api/district",disctrictRoutes);
 app.use("/api/auth",authRoutes);
+app.use("/api/user",userRoutes);
 
 app.get("/", (req,res) => {
   res.json({
