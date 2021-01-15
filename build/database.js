@@ -4,7 +4,7 @@ var _mongoose = _interopRequireDefault(require("mongoose"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_mongoose.default.connect("mongodb://localhost/pasco-project", {
+_mongoose.default.connect("mongodb+srv://edaga:daga2020@cluster0.qxixk.mongodb.net/pascodatabase?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: true,
