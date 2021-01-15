@@ -27,5 +27,5 @@ export const updateDistrict = async(req,res) => {
 export const deleteDistrict = async(req,res) => {
   const { districtId } = req.params;
   await District.findByIdAndDelete(districtId);
-  res.status(204).json();
+  res.status(204).json({ message : "District Delete" });
 }
