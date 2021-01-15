@@ -91,7 +91,9 @@ var deleteDistrict = /*#__PURE__*/function () {
       districtId
     } = req.params;
     yield _District.default.findByIdAndDelete(districtId);
-    res.status(204).json();
+    res.status(204).json({
+      message: "District Delete"
+    });
   });
 
   return function deleteDistrict(_x9, _x10) {

@@ -11,6 +11,8 @@ var _jsonwebtoken = _interopRequireDefault(require("jsonwebtoken"));
 
 var _config = _interopRequireDefault(require("../config"));
 
+var _Role = _interopRequireDefault(require("../models/Role"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -30,7 +32,23 @@ var signUp = /*#__PURE__*/function () {
       email,
       password: yield _User.default.encryptPassword(password)
     });
+
+    if (roles) {
+      var foundDoles = yield _Role.default.find({
+        name: {
+          $in: roles
+        }
+      });
+      newUser.roles = foundDoles.map(role => role._id);
+    } else {
+      var role = yield _Role.default.findOne({
+        name: "user"
+      });
+      newUser.roles = [role._id];
+    }
+
     var savedUser = yield newUser.save();
+    console.log(savedUser);
 
     var token = _jsonwebtoken.default.sign({
       id: savedUser._id
@@ -53,7 +71,27 @@ exports.signUp = signUp;
 
 var signIn = /*#__PURE__*/function () {
   var _ref2 = _asyncToGenerator(function* (req, res) {
-    res.json("signin");
+    var userFound = yield _User.default.findOne({
+      email: req.body.email
+    }).populate("roles");
+    if (!userFound) return res.json({
+      message: "User not found"
+    });
+    var matchPassword = yield _User.default.comparePassword(req.body.password, userFound.password);
+    if (!matchPassword) return res.status(401).json({
+      token: null,
+      message: "Invalid password"
+    });
+
+    var token = _jsonwebtoken.default.sign({
+      id: userFound._id
+    }, _config.default.SECRET, {
+      expiresIn: 86400
+    });
+
+    res.json({
+      token
+    });
   });
 
   return function signIn(_x3, _x4) {

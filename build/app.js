@@ -11,13 +11,16 @@ var _morgan = _interopRequireDefault(require("morgan"));
 
 var _package = _interopRequireDefault(require("../package.json"));
 
+var _initialSetup = require("./libs/initialSetup");
+
 var _district = _interopRequireDefault(require("./routes/district.routes"));
 
 var _auth = _interopRequireDefault(require("./routes/auth.routes"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var app = (0, _express.default)(); //Settings
+var app = (0, _express.default)();
+(0, _initialSetup.createRoles)(); //Settings
 
 app.set("port", process.env.PORT || 4000);
 app.set("pkg", _package.default); //Middleware
