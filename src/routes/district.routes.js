@@ -10,9 +10,9 @@ router.post("/", districtController.createDistrict);
 
 router.get("/:districtId", districtController.getDistrictById);
 
-router.put("/:districtId", authJwt.verifyToken, districtController.updateDistrict);
+router.put("/:districtId", [authJwt.verifyToken, authJwt.isAdmin] , districtController.updateDistrict);
 
-router.delete("/:districtId", [authJwt.verifyToken, authJwt.isModerator] , districtController.deleteDistrict);
+router.delete("/:districtId", [authJwt.verifyToken, authJwt.isAdmin] , districtController.deleteDistrict);
 
 
 export default router;
