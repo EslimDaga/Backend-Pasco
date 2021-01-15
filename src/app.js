@@ -2,10 +2,13 @@ import express from "express";
 import morgan from "morgan";
 import pkg from "../package.json";
 
+import { createRoles } from "./libs/initialSetup";
+
 import disctrictRoutes from "./routes/district.routes";
 import authRoutes from "./routes/auth.routes";
 
 const app = express();
+createRoles();
 
 //Settings
 app.set("port", process.env.PORT || 4000);
